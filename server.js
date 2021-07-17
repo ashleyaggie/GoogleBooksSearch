@@ -25,7 +25,9 @@ app.get("*", (req, res) => {
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
   }
 );
 
