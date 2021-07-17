@@ -8,31 +8,16 @@ function Search() {
   // Setting our component's initial state
   const [books, setBooks] = useState([])
   const [bookSearch, setBookSearch] = useState('');
-  const [formObject, setFormObject] = useState({
-    title: "",
-    authors: [],
-    image: "",
-    link: "",
-    description: ""
-  });
 
   function saveBook(book) {
-    setFormObject({
-        title: book.volumeInfo.title,
-        authors: book.volumeInfo.authors,
-        image: book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : "",
-        link: book.volumeInfo.infoLink,
-        description: book.volumeInfo.description
-    });
+
+    const title = book.volumeInfo.title;
+    const authors = book.volumeInfo.authors;
+    const description = book.volumeInfo.description;
+    const image = book.volumeInfo.imageLinks.thumbnail;
+    const link = book.volumeInfo.infoLink;
     
-    API.saveBook(formObject)
-      .then(() => setFormObject({
-        title: "",
-        authors: [],
-        image: "",
-        link: "",
-        description: ""
-      }))
+    API.saveBook({ title, authors, description, image, link })
       .then(res => {
         alert('Book saved.')
       })

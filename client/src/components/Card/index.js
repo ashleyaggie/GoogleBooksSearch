@@ -10,7 +10,8 @@ function Card(props) {
           <a href={props.link} target="_blank" rel="noopener noreferrer">
             <button className="btn">View</button>
           </a>
-          <button className="btn" onClick={props.onClickSave}>Save</button>
+          {props.onClickSave ? <button className="btn" onClick={props.onClickSave}>Save</button>
+            : <button className="btn" onClick={props.onClickDelete}>Delete</button>}
         </div>
       </div>
       <p>Written By {props.authors}</p>

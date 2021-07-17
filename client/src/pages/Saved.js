@@ -31,13 +31,13 @@ function Saved() {
                 {books.map(book => {
                     return (
                         <Card
-                            key={book.id}
-                            title={book.volumeInfo.title}
-                            authors={book.volumeInfo.authors}
-                            image={ book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""}
-                            link={book.volumeInfo.infoLink}
-                            description={book.volumeInfo.description}
-                            onClickSave={() => deleteBook(book.id)}
+                            key={book._id}
+                            title={book.title}
+                            authors={book.authors}
+                            image={book.image}
+                            link={book.link}
+                            description={book.description}
+                            onClickDelete={() => deleteBook(book._id)}
                             >
                         </Card>
                     )
