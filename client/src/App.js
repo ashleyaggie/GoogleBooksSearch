@@ -6,8 +6,6 @@ import Header from "../src/components/Header";
 import Search from "../src/pages/Search";
 import Saved from "../src/pages/Saved";
 
-console.log(process.env.REACT_APP_APIKEY)
-
 function App() {
   return (
     <div>
