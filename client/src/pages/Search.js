@@ -36,7 +36,6 @@ function Search() {
     event.preventDefault();
     API.getBooks(bookSearch)
     .then((res) => {
-        console.log(res)
         setBooks(res.data.items)
     })
     .catch(err => console.log(err));
