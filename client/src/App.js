@@ -1,6 +1,10 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React from "react";
 import "./App.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Navbar from "../src/components/Navbar";
+import Header from "../src/components/Header";
+import Search from "../src/pages/Search";
+import Saved from "../src/pages/Saved";
 
 function App() {
   return (
@@ -16,5 +20,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
